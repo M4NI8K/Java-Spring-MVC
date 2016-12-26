@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +20,22 @@
 
 	<div class="container">
 		
-		<h2>Current Project</h2>
-		
+		<h2>Projects</h2>
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+					<th>Name</th><th>Sponsor</th><th>Description</th>
+				</tr>
+				<c:forEach items="${projects}" var="project">
+					<tr>
+						<td><a href="<spring:url 
+							value="/project/${project.projectId}"/>">${project.name}</a></td>
+						<td>${project.sponsor}</td>
+						<td>${project.description}</td>
+					</tr>	
+				</c:forEach>
+			</tbody>
+		</table>
 		
 	</div>
 </body>
