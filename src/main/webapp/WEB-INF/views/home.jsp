@@ -19,7 +19,7 @@
 
 	<div class="container">
 		
-		<h2>Current Project</h2>
+		<h2>HOME</h2>
 		
 		
 	</div>

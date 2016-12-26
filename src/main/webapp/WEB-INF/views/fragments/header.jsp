@@ -8,7 +8,9 @@
     		
     		<ul class="nav navbar-nav">
     		
-    			<li><a href="#">Home</a></li>
+    			<li><a href="<spring:url value="/project"/>">Home</a></li>
+    		
+    			 <li><a href="<spring:url value="/project/ProjectCheck"/>">Project Check</a></li>
     		
     			<li class="dropdown">
           			
