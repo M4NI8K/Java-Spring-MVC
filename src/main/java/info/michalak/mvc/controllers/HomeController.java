@@ -2,12 +2,14 @@ package info.michalak.mvc.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import info.michalak.mvc.data.entities.Project;
+import info.michalak.mvc.data.services.ProjectService;
 
 /**
  * Handles requests for the application home page.
@@ -17,6 +19,21 @@ import info.michalak.mvc.data.entities.Project;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	
+	@Autowired //This will be auto invoked From application-context.xml
+	private ProjectService projectService;
+	
+	@RequestMapping(value = "/find", method = RequestMethod.GET)
+	public String goFind(Model model) {
+		model.addAttribute("goFind", this.projectService.findAll());
+		
+		System.out.println(" goFind Worked");
+		
+		
+			
+		return "projects_table";
+	}
 	
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)

@@ -5,8 +5,9 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
+<!-- Every Bean will be available for DISPATCHER servlet config file and all Controllers -->		
 		
-		
+		<bean id="projectService" class="info.michalak.mvc.data.services.ProjectService"></bean>
 		
 		
 </beans>

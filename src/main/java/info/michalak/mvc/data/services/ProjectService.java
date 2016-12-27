@@ -10,6 +10,9 @@ import info.michalak.mvc.data.entities.Project;
 
 public class ProjectService {
 
+	//Returns a list of projects
+	
+	
 		private List<Project> projects = new LinkedList<>();
 		
 		public ProjectService(){
