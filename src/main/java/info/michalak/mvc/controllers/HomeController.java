@@ -24,7 +24,8 @@ public class HomeController {
 	
 	@Autowired //This will be auto invoked From application-context.xml
 	private ProjectService projectService;
-	
+
+// Passes  LIST of Project Object  from Above Beaned Service 
 	@RequestMapping(value = "/find", method = RequestMethod.GET)
 	public String goFind(Model model) {
 		model.addAttribute("goFind", this.projectService.findAll());
@@ -33,7 +34,7 @@ public class HomeController {
 		
 		return "projects_table";
 	}
-	
+// Passes ID in the link from above mapped model transletes to long 
 	@RequestMapping(value = "/find/{projectId}")
 	public String goFindProject(Model model,@PathVariable("projectId") Long projectIds) {
 		model.addAttribute("goFindIds", this.projectService.find(projectIds));
