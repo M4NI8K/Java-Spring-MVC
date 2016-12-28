@@ -24,37 +24,37 @@
 			
 				<div class="form-group">
 					<label for="project-name">Name</label>
-					<span>${project.name}</span>
+					<span>${goFindIds.name}</span>
 				</div>
 
 				<div class="form-group">
 					<label for="project_type">Type</label>
-					<span>${project.type }</span>
+					<span>${goFindIds.type }</span>
 				</div>
 							
 				<div class="form-group">
 					<label for="sponsor">Sponsor</label>
-					<span>${project.sponsor}</span>
+					<span>${goFindIds.sponsor}</span>
 				</div>
 			
 				<div class="form-group">
 					<label for="funds">Authorized Funds</label>
-					<span>${project.authorizedFunds}</span>
+					<span>${goFindIds.authorizedFunds}</span>
 				</div>
 			
 				<div class="form-group">
 					<label for="hours">Authorized Hours</label>
-					<span>${project.authorizedHours}</span>
+					<span>${goFindIds.authorizedHours}</span>
 				</div>
 			
 				<div class="form-group">
 					<label for="project-name">Description</label>
-					<span>${project.description}</span>
+					<span>${goFindIds.description}</span>
 				</div>
 				
 				<div class="form-group">
 					<label for="special">Special</label>
-					<span>${project.special == true ? 'Yes':'No'}</span>
+					<span>${goFindIds.special == true ? 'Yes':'No'}</span>
 				</div>
 			
 		</div>

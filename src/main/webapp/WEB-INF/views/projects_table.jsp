@@ -26,13 +26,14 @@
 				<tr>
 					<th>Name</th><th>Sponsor</th><th>Description</th>
 				</tr>
-				<c:forEach items="${goFind}" var="obj"> <!-- for each go find is list of Project objects, "obj" is named single list object-->
+				<c:forEach items="${goFind}" var="project">
 					<tr>
-						<td>${obj.projectId}"/>">${obj.name}</a></td>
-						<td>${obj.sponsor}</td>
-						<td>${obj.description}</td>
+						<td><a href="<spring:url 
+							value="/project/find/${project.projectId}"/>">${project.name}</a></td>
+						<td>${project.sponsor}</td>
+						<td>${project.description}</td>
 					</tr>	
-				</c:forEach> <!-- END OF FOR EACH  -->
+				</c:forEach>
 			</tbody>
 		</table>
 		
