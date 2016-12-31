@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,7 +35,7 @@ public class HomeController {
 		
 		return "projects_table";
 	}
-// Passes ID in the link from above mapped model transletes to long 
+// Passes ID in the link from above mapped model translates to long 
 	@RequestMapping(value = "/find/{projectId}")
 	public String goFindProject(Model model,@PathVariable("projectId") Long projectIds) {
 		model.addAttribute("goFindIds", this.projectService.find(projectIds));
@@ -55,13 +56,14 @@ public class HomeController {
 //GET	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String goAddProject() {
-		
+
 		System.out.println("goAddProject Worked");
 		return "project_add";
 	}
-//POST	
+//POST	+ @MODELATRUBUTE!!!  DATABINDING
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String doAddProject() {
+	
+	public String doAddProject(@ModelAttribute Project project) {
 		
 		System.out.println("doAddProject Worked");
 		return "project_add";
